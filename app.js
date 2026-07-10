@@ -66,7 +66,7 @@ const products = [
 let cart = JSON.parse(localStorage.getItem('dingo_cart')) || [];
 let activeFilter = 'all';
 let searchQuery = '';
-const WHATSAPP_PHONE = '15550199999'; // Standard placeholder WhatsApp international number
+const WHATSAPP_PHONE = '918438885714'; // Customer order phone number (India)
 
 // --- DOM ELEMENTS ---
 const productGrid = document.getElementById('product-grid');
