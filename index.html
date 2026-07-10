@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dingo Golds - Premium E-Commerce store for handcrafted luxury rings, necklaces, bracelets, and earrings. Perfect elegance for every occasion.">
+  <title>Dingo Golds | Handcrafted Luxury & Elegance</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- --- HEADER / NAVIGATION --- -->
+  <header>
+    <a href="#home" class="logo">
+      <i class="fa-solid fa-gem"></i> DINGO <span>Golds</span>
+    </a>
+    
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-item active" data-target="home">Home</a></li>
+        <li><a href="#shop" class="nav-item" data-target="shop">Shop</a></li>
+        <li><a href="#about" class="nav-item" data-target="about">About Us</a></li>
+        <li><a href="#contact" class="nav-item" data-target="contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <button class="cart-icon-btn" id="cart-toggle-btn" aria-label="Open Shopping Cart">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cart-badge-count">0</span>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- --- MAIN PAGES (SPA TARGETS) --- -->
+  <main>
+    
+    <!-- 1. HOME SECTION -->
+    <section id="home" class="page-section active">
+      <div class="hero">
+        <div class="hero-content">
+          <p class="hero-subtitle">Exquisite Handcrafted Masterpieces</p>
+          <h1 class="hero-title">Timeless Luxury, Crafted For You</h1>
+          <p class="hero-desc">Discover our curated collections of fine gold rings, sapphire necklaces, and premium pearl drops designed to elevate your unique radiance.</p>
+          <div style="display: flex; gap: 20px; justify-content: center;">
+            <a href="#shop" class="btn-primary nav-trigger" data-target="shop">Explore Collection</a>
+            <a href="#about" class="btn-secondary nav-trigger" data-target="about">Our Story</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories Showcase -->
+      <div class="section-padding">
+        <div class="section-header">
+          <h2>Shop By Category</h2>
+          <p>Explore our exquisite selections of luxury goods tailored to every taste.</p>
+        </div>
+        <div class="category-grid">
+          <div class="category-card category-trigger" data-category="Rings">
+            <img src="assets/ring_diamond.png" alt="Luxury Rings Category" class="category-img">
+            <div class="category-overlay">
+              <h3>Rings</h3>
+              <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+          <div class="category-card category-trigger" data-category="Necklaces">
+            <img src="assets/necklace_sapphire.png" alt="Elegant Necklaces Category" class="category-img">
+            <div class="category-overlay">
+              <h3>Necklaces</h3>
+              <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+          <div class="category-card category-trigger" data-category="Earrings">
+            <img src="assets/earrings_pearl.png" alt="Exquisite Earrings Category" class="category-img">
+            <div class="category-overlay">
+              <h3>Earrings</h3>
+              <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+          <div class="category-card category-trigger" data-category="Bracelets">
+            <img src="assets/bracelet_emerald.png" alt="Stunning Bracelets Category" class="category-img">
+            <div class="category-overlay">
+              <h3>Bracelets</h3>
+              <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SHOP / PRODUCT LISTING SECTION -->
+    <section id="shop" class="page-section section-padding">
+      <div class="section-header">
+        <h2>Our Creations</h2>
+        <p>Browse through our collection of premium, handcrafted luxury jewellery.</p>
+      </div>
+
+      <div class="shop-layout">
+        <!-- Filter Sidebar -->
+        <aside class="shop-sidebar">
+          <div class="filter-group">
+            <h3>Search Products</h3>
+            <div class="search-wrapper">
+              <input type="text" class="search-input" id="search-input" placeholder="Search by name...">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Categories</h3>
+            <ul class="category-list">
+              <li class="category-item active" data-filter="all">
+                <span>All Categories</span>
+                <span class="category-count" id="count-all">6</span>
+              </li>
+              <li class="category-item" data-filter="Rings">
+                <span>Rings</span>
+                <span class="category-count" id="count-rings">2</span>
+              </li>
+              <li class="category-item" data-filter="Necklaces">
+                <span>Necklaces</span>
+                <span class="category-count" id="count-necklaces">2</span>
+              </li>
+              <li class="category-item" data-filter="Earrings">
+                <span>Earrings</span>
+                <span class="category-count" id="count-earrings">1</span>
+              </li>
+              <li class="category-item" data-filter="Bracelets">
+                <span>Bracelets</span>
+                <span class="category-count" id="count-bracelets">1</span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Product Listing Grid -->
+        <div class="shop-content">
+          <div class="shop-toolbar">
+            <div class="results-count" id="results-count">Showing all products</div>
+          </div>
+          <div class="product-grid" id="product-grid">
+            <!-- Dynamic products injected here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT US SECTION -->
+    <section id="about" class="page-section section-padding">
+      <div class="about-section">
+        <div class="about-img-container">
+          <img src="assets/necklace_pearl.png" alt="Dingo Golds Craftsmanship" class="about-img">
+        </div>
+        <div class="about-content">
+          <h2>Our Legacy & Craft</h2>
+          <p>Founded on a heritage of excellence, Dingo Golds stands at the intersection of traditional artistry and contemporary sophistication. We believe each piece of jewellery tells a deeply personal story—a testament of love, celebration, or self-expression.</p>
+          <p>Our gold is ethically sourced, and our gemstones are hand-selected by master gemologists. Every design is carefully sculpted to bring out the maximum brilliance and detail, ensuring a custom luxury feel that lasts for generations.</p>
+          
+          <div class="brand-values">
+            <div class="value-item">
+              <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="value-title">Certified Quality</div>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted);">100% certified authentic metals & gemstones.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="value-title">Ethical Sourcing</div>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted);">Responsibly mined gems & sustainable materials.</p>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <div class="value-title">Bespoke Design</div>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted);">Artisan handcrafted details on every single item.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CONTACT US SECTION -->
+    <section id="contact" class="page-section section-padding">
+      <div class="section-header">
+        <h2>Connect With Us</h2>
+        <p>Have a custom design request or any inquiries? Our dedicated advisors are ready to assist you.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Info Column -->
+        <div class="contact-info-panel">
+          <h3>Visit Our Atelier</h3>
+          <p style="color: var(--color-text-muted); margin-bottom: 30px;">Experience our signature boutique service in person or reach out through our digital lines.</p>
+          
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-detail-text">
+              <h4>Flagship Store</h4>
+              <p>752 Fifth Avenue, New York, NY 10019</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-detail-text">
+              <h4>Phone Inquiry</h4>
+              <p>+1 (800) 555-DINGO (3464)</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-detail-text">
+              <h4>Email Support</h4>
+              <p>concierge@dingogolds.com</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="contact-detail-text">
+              <h4>Atelier Hours</h4>
+              <p>Monday - Saturday: 10:00 AM - 7:00 PM<br>Sunday: 12:00 PM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="contact-form-panel">
+          <h3>Send Us a Message</h3>
+          <form id="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out! A luxury concierge representative will contact you shortly.'); this.reset();">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Full Name</label>
+              <input type="text" id="contact-name" class="form-input" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Email Address</label>
+              <input type="email" id="contact-email" class="form-input" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <input type="text" id="contact-subject" class="form-input" required placeholder="Custom Gold Ring Query">
+            </div>
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea id="contact-message" class="form-input" required placeholder="Write your inquiry here..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- --- FOOTER --- -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#home" class="logo" style="margin-bottom: 20px;">
+          <i class="fa-solid fa-gem"></i> DINGO
+        </a>
+        <p>Curators of fine handcrafted gold jewellery and bespoke treasures since 1996.</p>
+        <div style="display: flex; gap: 15px; font-size: 1.2rem; margin-top: 15px;">
+          <a href="#" aria-label="Facebook Link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram Link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest Link"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Collections</h3>
+        <ul class="footer-links">
+          <li><a href="#shop" class="nav-trigger" data-target="shop">Diamond Rings</a></li>
+          <li><a href="#shop" class="nav-trigger" data-target="shop">Pearl Earrings</a></li>
+          <li><a href="#shop" class="nav-trigger" data-target="shop">Sapphire Necklaces</a></li>
+          <li><a href="#shop" class="nav-trigger" data-target="shop">Emerald Bracelets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#about" class="nav-trigger" data-target="about">About Us</a></li>
+          <li><a href="#contact" class="nav-trigger" data-target="contact">Contact Us</a></li>
+          <li><a href="#">FAQ & Shipping</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>Subscribe to receive news about our latest designs, private previews, and exclusive offers.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+          <input type="email" class="newsletter-input" required placeholder="Your email address" aria-label="Email address for newsletter">
+          <button type="submit" class="btn-newsletter">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Dingo Golds. All rights reserved. Designed for Elegance.</p>
+    </div>
+  </footer>
+
+  <!-- --- OVERLAYS & MODALS --- -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- Shopping Cart Drawer -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h2>Shopping Bag</h2>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Close Shopping Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items-list" id="cart-items-list">
+      <!-- Dynamic cart items will be injected here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-totals">
+        <span>Subtotal</span>
+        <span class="total-price" id="cart-subtotal">₹0.00</span>
+      </div>
+      <button class="btn-whatsapp-checkout" id="whatsapp-checkout-btn">
+        <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- Product Details Modal -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close details modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-grid" id="modal-grid-content">
+        <!-- Injected dynamically on click -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Script -->
+  <script src="app.js"></script>
+</body>
+</html>
